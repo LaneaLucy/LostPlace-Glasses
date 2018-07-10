@@ -2,7 +2,9 @@
 
 Brille für LostPlacer Gruppen
 
-hardware version 1.0.0
+# Hardware
+
+## version 1.0.0
 
 -HoloKit (https://www.amazon.de/dp/B0777HMJXP/?coliid=I3R6KX7T1HL4Q5&colid=34SKPPNHS8AUR&psc=0&ref_=lv_ov_lig_dp_it)
 
