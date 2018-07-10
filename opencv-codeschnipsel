@@ -1,3 +1,9 @@
+http://cvdrone.de/opencv-python-examples/
+http://cvdrone.de/_pages/opencv-python-examples/OpenCVCheatSheet.pdf
+
+
+
+
 import cv2
  
 # lese Bild von Festplatte
@@ -58,7 +64,17 @@ key = cv2.waitKey(1) & 0xff
 
 # wenn ESC gedrückt, beende Programm
 if key == 27:
+    cv2.destroyAllWindows()
     break
+
+# speichert das bild
+cv2.imwrite('path',img)
+
+# split BGR image into separate channels
+blue, green, red = cv2.split(image) 
+
+# merge channels into one BGR image
+image = cv2.merge((blue, green, red)) 
 
 
 
