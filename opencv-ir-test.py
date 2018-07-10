@@ -13,8 +13,7 @@ while cam.isOpened():
     # lese frame von WebCam
     ret, frame = cam.read()
  
-    # konvertiere Frame in HSV-Farbraum, um besser nach Farb-Ranges filtern zu können
-    frame = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+    #frame = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
  
     # waehle ein Region auf Interest an Punkt: (y, x) mit Dimension 50x50 Pixel
     region_of_interest = image[y:h, x:w]
@@ -30,7 +29,7 @@ while cam.isOpened():
     # warte auf Tastendruck (sonst sieht man das Fenster nicht)
     key = cv2.waitKey(1) & 0xff
  
-    # wenn ESC gedrückt, beende Programm
+    # warte auf Tastendruck (wichtig, sonst sieht man das Fenster nicht)
     if key == 27:
         break
         print("test")
