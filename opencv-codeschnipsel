@@ -31,3 +31,35 @@ cv2.imshow("Bild modifiziert", image)
  
 # warte auf Tastendruck (wichtig, sonst sieht man das Fenster nicht)
 cv2.waitKey(0)
+ 
+# initialisiere WebCam
+cam = cv2.VideoCapture(0)
+ 
+# lese ein Bild von der WebCam
+ret, frame = cam.read()
+ 
+# konvertiere das Bild in Graustufen
+image = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
+# arbeite solange die cam "offen" ist
+while cam.isOpened():
+ 
+# zeichne Rechteck in Bild
+cv2.rectangle(frame, (x, y), (x+w, y+h), (255, 255, 255), thickness=1)
+ 
+# konvertiere Frame in HSV-Farbraum
+frame = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+ 
+# filtere Bild nach Farbgrenzen
+mask = cv2.inRange(frame, lower_yellow, upper_yellow)
+ 
+# warte auf Tastendruck (sonst sieht man das Fenster nicht)
+key = cv2.waitKey(1) & 0xff
+
+# wenn ESC gedrückt, beende Programm
+if key == 27:
+    break
+
+
+
+
